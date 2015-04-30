@@ -10,7 +10,7 @@ module.exports = {
     db: new Db('mydbname', new Server('something.tgen.org', my_port),{safe:true})
 };
 
-to generate data, run python_generate_data/map_images.sh as indicated below (this will take a while, generates data for /liang, /carpten, /ngd-data, /IVY and /su2c)
+to generate data, run python_generate_data/map_images.sh as indicated below (this will take a while, generates data for /liang, /carpten, /ngd-data, /IVY and /su2c... make sure you have access to these directories!):
 
 nohup bash map_images.sh your_mongodb_address your_port your_desired_db &
 
