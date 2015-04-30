@@ -11,7 +11,7 @@ body{
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%) translateZ(0);
-  background-image: url('http://i.imgur.com/afmNQO7.jpg');
+  background-image: url('images/afmNQO7.jpg');
   background-size: 200%;
   -webkit-animation: gridLoop 10s infinite linear;
   -webkit-backface-visibility: hidden;
@@ -51,8 +51,20 @@ body{
 }
 
 rect {
-  fill: none;
   pointer-events: all;
+  cursor: pointer;
+}
+
+.formatting{
+  font-family: helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.3999996185303px;
+  height:120px;
+  width:1200px;
+  word-wrap: break-word;
 }
 
 pre {
@@ -63,3 +75,74 @@ line {
   stroke: #000;
   stroke-width: 1.5px;
 }
+
+#menu{
+  padding-top:20px;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: helvetica;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+.popup img{
+  width:40px;
+  height:auto;
+}
+
+@media screen and (max-width: 1800px){
+  .box{
+    width: 75%;
+  }
+  .popup{
+    width: 75%;
+  }
+}
+
+
