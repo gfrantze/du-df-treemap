@@ -2,8 +2,8 @@ from pymongo import MongoClient
 import sys
 
 f_ = open(sys.argv[1]).readlines()
-client = MongoClient(sys.argv[2], int(sys.argv[3])  )
-db = client[sys.argv[4]]
+client = MongoClient(sys.argv[3], int(sys.argv[4])  )
+db = client[sys.argv[5]]
 
 collection = db[sys.argv[2]]
 collection.remove({})
