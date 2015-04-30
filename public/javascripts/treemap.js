@@ -19,17 +19,22 @@ function getLS(myQuery) {
 
             console.log(res);
 
-            $("#g1").append(res[0].path)
-            $("#g1").append("<br>");
-            $("#g1").append("<br>");
+            if(path in res){
 
-            for (var i = 0; i < res.length; i++) {
+                $("#g1").append(res[0].path)
+                $("#g1").append("<br>");
+                $("#g1").append("<br>");
 
-                $("#g1").append(res[i].size + "&nbsp;&nbsp;&nbsp;&nbsp;" + res[i].filename + " <br> ");
+                for (var i = 0; i < res.length; i++) {
+
+                    $("#g1").append(res[i].size + "&nbsp;&nbsp;&nbsp;&nbsp;" + res[i].filename + " <br> ");
+
+                }
 
             }
 
             loading = false;
+
 
         },
 
