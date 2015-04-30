@@ -19,7 +19,7 @@ function getLS(myQuery) {
 
             console.log(res);
 
-            if(path in res){
+            if(res!=[]){
 
                 $("#g1").append(res[0].path)
                 $("#g1").append("<br>");
