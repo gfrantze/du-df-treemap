@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import sys
 
 f_ = open(sys.argv[1]).readlines()
-client = MongoClient(sys.argv[2], sys.argv[3])
+client = MongoClient(sys.argv[2], int(sys.argv[3])  )
 db = client[sys.argv[4]]
 
 collection = db[sys.argv[2]]

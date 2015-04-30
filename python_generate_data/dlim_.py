@@ -11,7 +11,7 @@ docNum = None
 
 #put in mongo
 def doMongo(tree):
-    client = MongoClient(sys.argv[5], sys.argv[6])
+    client = MongoClient(sys.argv[5], int(sys.argv[6])  )
     db = client[sys.argv[7]]
     collection = db[sys.argv[4]]
     collection.remove({})
