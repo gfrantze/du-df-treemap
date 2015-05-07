@@ -57,25 +57,25 @@ This script will create a single nested JSON document in a format similar to fla
 
 **python dlim_.py some_image.txt df_some_image.txt collection_name mongodb_ip mongodb_port mongodb_dbname**
 
-This script will generate mongodb documents that represent ls -laRp data. Paramaters: your ls text fileput, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database.
+This script will generate mongodb documents that represent ls -laRp data. Paramaters: your ls text fileput, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database. **your collection name must contain the suffix _lRp for this step**
 
-**python parse_lRp.py ls_lRp_some_image.txt collection_name mongodb_ip mongodb_port mongodb_dbname**
+**python parse_lRp.py ls_lRp_some_image.txt collection_name_lRp mongodb_ip mongodb_port mongodb_dbname**
 
 Modifying the view
 ------------------
 
-If you chose to create a directory that is not one of my map_images.sh presets, you must modify the view. Open views/tml.hjs and add a dropdown option:
+If you chose to create a directory that is not one of my map_images.sh presets, you must modify the view. Open views/tml.hjs and add a dropdown option. Make sure the value attribute is the name of your mongodb collection that contains the output of dlim_.py. 
 
-"<select id="chn" name='image'>
+```HTML
+<select id="chn" name='image'>
                         <option value='liang'>/liang</option>
                         <option value='IVY'>/IVY</option>
                         <option value='su2c'>/su2c</option>
                         <option value='ngddata'>/ngd-data</option>
                         <option value='carpten'>/carpten</option>
                         <option value='whatever'>/whatever</option>
-</select>"
-
-more here soon
+</select>
+```
 
 
 Starting the app

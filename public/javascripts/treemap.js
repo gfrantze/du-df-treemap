@@ -160,32 +160,6 @@ function curryInit(elem, _json, tt) {
 
 
 
-function init() {
-
-    $(".spinner").show();
-
-
-    $.ajax({
-        type: "GET",
-        url: "/tmdata",
-        timeout: 180000,
-        success: function(res) {
-
-            curryInit(document.getElementById("hi"), res, $("#tooltip"));
-            $(".spinner").hide();
-
-        },
-
-        error: function(request, status, err) {
-            console.log("error");
-        }
-
-    });
-
-
-};
-
-
 function clearTm() {
 
     $("#hi").empty();
@@ -197,33 +171,10 @@ function clearTm() {
 function newImg() {
 
     $(".spinner").show();
-    var data = '';
 
-
-    if ($("#chn").val() == "su2c")
-        data = {
-            item: "su2c"
-        };
-
-    if ($("#chn").val() == "IVY")
-        data = {
-            item: "IVY"
-        };
-
-    if ($("#chn").val() == "liang")
-        data = {
-            item: "liang"
-        };
-
-    if ($("#chn").val() == "ngddata")
-        data = {
-            item: "ngddata"
-        }
-
-    if ($("#chn").val() == "carpten")
-        data = {
-            item: "carpten"
-        }
+    var data = {
+        item: $("#chn").val()
+    };
 
 
     $.ajax({
@@ -251,4 +202,4 @@ function newImg() {
 
 
 
-window.onload = init;
+window.onload = newImg;

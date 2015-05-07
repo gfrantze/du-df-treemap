@@ -8,21 +8,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/tmdata', function(req, res) {
-    console.log("in tm data");
-    db.open(function(err, db1) {
-        db1.collection('liang', function(err, du2) {
-            du2.find({}, {
-                _id: 0
-            }).toArray(function(err, data) {
-                res.json(data);
-                db1.close();
-            })
-        });
-    });
-});
-
-
 
 router.post('/ls', function(req, res, next) {
 
