@@ -1,3 +1,9 @@
+About
+=====
+
+This tool uses the Unix du/df tools to gather file system data and format it so that it can be displayed in a d3.js treemap. This is accomplished by generating json in a format similar to flare.json. Additionally, the Unix ls program is used to gather file data, which is then displayed when clicking the treemap.
+
+
 Getting Started
 ===============
 
@@ -33,7 +39,7 @@ To generate data*:
 OR:
 ---
 
-To use other directories **other than my presets**, you can append map_images.sh or generate data for a single image:
+To use directories **other than my presets**, you can append map_images.sh or generate data for a single image:
 
 First, get disk usage statistics. -S flag is required!
 
