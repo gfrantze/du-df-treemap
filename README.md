@@ -57,7 +57,7 @@ This next script will create a single nested JSON document in a format similar t
 
 **python dlim_.py some_image.txt df_some_image.txt collection_name mongodb_ip mongodb_port mongodb_dbname**
 
-This final script will generate mongodb documents that represent ls -laRp data. Paramaters: your ls text fileput, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database. **your collection name must contain the suffix _lRp for this step**
+This final script will generate mongodb documents that represent ls -laRp data. Parameters: your ls text fileput, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database. **your collection name must contain the suffix _lRp for this step**
 
 **python parse_lRp.py ls_lRp_some_image.txt collection_name_lRp mongodb_ip mongodb_port mongodb_dbname**
 
