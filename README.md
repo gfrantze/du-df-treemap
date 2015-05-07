@@ -53,11 +53,11 @@ Next, get file information...
 
 **ls -laRp /some_image  > ls_lRp_some_image.txt**
 
-This script will create a single nested JSON document in a format similar to flare.json. Parameters: your du text file output, your df text file output, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database.
+This next script will create a single nested JSON document in a format similar to flare.json. Parameters: your du text file output, your df text file output, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database.
 
 **python dlim_.py some_image.txt df_some_image.txt collection_name mongodb_ip mongodb_port mongodb_dbname**
 
-This script will generate mongodb documents that represent ls -laRp data. Paramaters: your ls text fileput, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database. **your collection name must contain the suffix _lRp for this step**
+This final script will generate mongodb documents that represent ls -laRp data. Paramaters: your ls text fileput, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database. **your collection name must contain the suffix _lRp for this step**
 
 **python parse_lRp.py ls_lRp_some_image.txt collection_name_lRp mongodb_ip mongodb_port mongodb_dbname**
 
