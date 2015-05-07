@@ -61,6 +61,21 @@ This script will generate mongodb documents that represent ls -laRp data. Parama
 
 **python parse_lRp.py ls_lRp_some_image.txt collection_name mongodb_ip mongodb_port mongodb_dbname**
 
+Modifying the view
+------------------
+
+If you chose to create a directory that is not one of my map_images.sh presets, you must modify the view. Open views/tml.hjs and add a dropdown option:
+
+"<select id="chn" name='image'>
+                        <option value='liang'>/liang</option>
+                        <option value='IVY'>/IVY</option>
+                        <option value='su2c'>/su2c</option>
+                        <option value='ngddata'>/ngd-data</option>
+                        <option value='carpten'>/carpten</option>
+                        <option value='whatever'>/whatever</option>
+</select>"
+
+more here soon
 
 
 Starting the app
