@@ -13,6 +13,7 @@ router.post('/ls', function(req, res, next) {
 
     var path = req.body.ls + ":";
     var collection = req.body.mc + "_lRp";
+    console.log(req.body);
 
     db.open(function(err, db1) {
         db1.collection(collection, function(err, du2) {
@@ -42,6 +43,8 @@ router.post('/tmdata_update', function(req, res, next) {
 
     db.open(function(err, db1) {
         db1.collection(o, function(err, du2) {
+
+            if(!err){
             du2.find({}, {
                 _id: 0
             }).toArray(function(err, data) {
@@ -49,6 +52,10 @@ router.post('/tmdata_update', function(req, res, next) {
                 res.json(data);
                 db1.close();
             })
+            }
+            else{
+                console.log("issue connecting");
+            }
         });
     });
 

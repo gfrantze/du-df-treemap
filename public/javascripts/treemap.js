@@ -9,6 +9,7 @@ function getLS(myQuery) {
         mc: $("#chn").val()
     };
     $("#g1").empty();
+    console.log(data);
 
     $.ajax({
         type: "POST",
