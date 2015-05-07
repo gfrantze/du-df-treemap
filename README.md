@@ -11,7 +11,7 @@ cd du-df-treemap && npm install
 Data Generation
 ===============
 
-To use existing data, skip this step. Otherwise, set your mongodb address, port, and db in connection.js:
+To use existing data **(only if you have access to my mongo instace!)**, skip this step. Otherwise, set your mongodb address, port, and db in connection.js:
 
 module.exports = {
 
