@@ -11,28 +11,26 @@ docNum = None
 
 #put in mongo
 def doMongo(tree):
-    client = MongoClient(sys.argv[5], int(sys.argv[6])  )
-    db = client[sys.argv[7]]
-    collection = db[sys.argv[4]]
+    client = MongoClient(sys.argv[4], int(sys.argv[5])  )
+    db = client[sys.argv[6]]
+    collection = db[sys.argv[3]]
     collection.remove({})
     collection.insert(tree)
 
 #creates universe of dictionaries from du input
 def formatItems(du):
+
+    __root = du[len(du)-1].split()
+    if __root and __root!="":
+        global root
+        root = __root
+        universe.append( {'name':__root[1], 'size':__root[0], 'parent':None, 'children':[] } )
     for item in du:
         fLineArr = item.split('\t')
         size = int(fLineArr[0])*1000
         path = fLineArr[1].strip('\n');
         parent = path.rsplit('/',1)[0]
-        # the root is contingent upon initial depth
-        # if /liang for example, length should be 2
-        # if /home/gfrantzen, length should be 3
-        if ( len( path.split('/') ) == int(sys.argv[1])+1 ):
-            if path!='':
-                global root
-                root=path
-            universe.append( {'name':path, 'size':size, 'parent':None} )
-        else:
+        if path!=__root[1]:
             universe.append( {'name':path, 'size':size, 'parent':parent } )
 
 
@@ -86,7 +84,6 @@ def nest(dn):
                 parent.pop('size',None)
                 parent['children'].append(atom)
         else:
-            atom.pop('parent',None)
             atom['children'].append(empty)
             tree.append(atom)
     r = []
@@ -105,8 +102,8 @@ def doDf(df,root):
 
 
 def main():
-    du = open(sys.argv[2]).readlines()
-    df = open(sys.argv[3]).read().split()
+    du = open(sys.argv[1]).readlines()
+    df = open(sys.argv[2]).read().split()
     formatItems(du)
     doDf(df,root)
     print(len(universe))
@@ -118,7 +115,7 @@ def main():
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser = OptionParser(usage="usage: %prog [required:initial_depth (e.g. /home == 1)] [required:your_du.txt] [required:your_df.txt]  [required:output_collection]  [optional:options/flags]",
+    parser = OptionParser(usage="usage: %prog [required:your_du.txt]  [required:your_df.txt]  [required:output_collection]  [required:output_db_ip]  [required:output_db_port]   [required:output_db_name]   [optional:options/flags]",
                           version="%prog 1.01")
     parser.add_option("--lim", type="int", dest="docNum", help="Specify a maximum number of documents. Program will attempt to remove least significant values. If this option is null, all du.txt lines will be processed.")
     (options, args) = parser.parse_args()
