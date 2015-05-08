@@ -15,7 +15,7 @@ for item in f_:
     template = {"path":"","filename":"","size":0}
     if item[0]=='/':
         path=item.rstrip('\n')
-    elif item.split() and item.split()[0]!="total" and item.split()[0]!=" " and len(item.split())>3:
+    elif item.split() and item.split()[0]!="total" and item.split()[0]!=" " and len(item.split())>8:
         template['filename']=item.split()[8]
         template['size']=int(item.split()[4])
         template['path']=path
