@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 import sys
+import pymongo
 
 f_ = open(sys.argv[1]).readlines()
 client = MongoClient(sys.argv[3], int(sys.argv[4])  )
@@ -7,6 +8,7 @@ db = client[sys.argv[5]]
 
 collection = db[sys.argv[2]]
 collection.remove({})
+collection.ensure_index([("size",pymongo.DESCENDING)])
 print(collection)
 
 path = ""

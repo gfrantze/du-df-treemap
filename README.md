@@ -1,6 +1,8 @@
 About
 =====
 
+v1.01 (patch notes below)
+
 This tool uses the Unix du/df tools to gather file system data and format it so that it can be displayed in a d3.js treemap. This is accomplished by generating json in a format similar to flare.json. Additionally, the Unix ls program is used to gather file data, which is then displayed when clicking the treemap.
 
 
@@ -84,3 +86,14 @@ Starting the app
 When data generation has finished, or if step was skipped, make sure in /du-df-treemap and:
 
 **npm start**
+
+
+
+
+v1.01 changes
+-------------
+
+-- optimized file viewer load time
+-- HTML/CSS formatting changes
+
+

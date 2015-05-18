@@ -18,7 +18,6 @@ ls -laRp /su2c  > ls_lRp_su2c.txt
 ls -laRp /ngd-data  > ls_lRp_ngddata.txt
 ls -laRp /carpten > ls_lRp_carpten.txt
 
-
 python dlim_.py carpten.txt df_carpten.txt carpten $1 $2 $3 
 python dlim_.py liang.txt df_liang.txt liang $1 $2 $3 
 python dlim_.py su2c.txt df_su2c.txt su2c $1 $2 $3 

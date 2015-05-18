@@ -118,7 +118,7 @@ function curryInit(elem, _json, tt) {
 
             nl_copy = nameList[0];
 
-            $(tt).html("<p>" + 'PATH: ' + nameList + '. ITEM SIZE = ' + Math.round((d.size / 1000000000) * 100) / 100 + ' GB ' + "</p>");
+            $(tt).html("<p>" + '<b>PATH:</b> ' + nameList + ' <br><b>ITEMSIZE:</b> ' + Math.round((d.size / 1000000000) * 100) / 100 + ' GB ' + "</p>");
 
         })
 
