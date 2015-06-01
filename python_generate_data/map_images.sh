@@ -29,7 +29,7 @@ ls -laRp /carpten > ls_lRp_carpten.txt
 
 python dlim_.py keats.txt df_keats.txt keats $1 $2 $3
 python dlim_.py trent.txt df_trent.txt trent $1 $2 $3
-python dlim_.py MMRF.txt df_MMRF.txt MMRF $1 $2 $3
+python dlim_.py MMRF.txt df_MMRF.txt MMRF --lim 89000 $1 $2 $3
 python dlim_.py carpten.txt df_carpten.txt carpten $1 $2 $3 
 python dlim_.py liang.txt df_liang.txt liang $1 $2 $3 
 python dlim_.py su2c.txt df_su2c.txt su2c $1 $2 $3 
