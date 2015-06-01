@@ -9,6 +9,7 @@ db = client[sys.argv[5]]
 collection = db[sys.argv[2]]
 collection.remove({})
 collection.ensure_index([("size",pymongo.DESCENDING)])
+collection.ensure_index([("path",pymongo.DESCENDING)])
 print(collection)
 
 path = ""
