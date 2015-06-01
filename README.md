@@ -93,7 +93,10 @@ When data generation has finished, or if step was skipped, make sure in /du-df-t
 v1.01 changes
 -------------
 
--- optimized file viewer load time
--- HTML/CSS formatting changes
+- optimized file viewer load time
+- HTML/CSS formatting changes
 
+v1.02
+------
 
+- added default support for /trent, /keats and /MMRF
