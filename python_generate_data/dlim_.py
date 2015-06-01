@@ -14,7 +14,7 @@ def doMongo(tree):
     client = MongoClient(sys.argv[4], int(sys.argv[5])  )
     db = client[sys.argv[6]]
     collection = db[sys.argv[3]]
-    collection.remove({})
+    collection.remove()
     collection.insert(tree)
 
 #creates universe of dictionaries from du input
