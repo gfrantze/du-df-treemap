@@ -7,15 +7,15 @@ count=0
 for i in "${images[@]}"
 do
    :
-   echo "du -S $i --exclude=$i/.snapshot 2>/dev/null > "${collections[count]}".txt"
-   echo "df $i > df_"${collections[count]}".txt"
-   echo "ls -laRp $i > ls_lRp_"${collections[count]}".txt"
+   du -S $i --exclude=$i/.snapshot 2>/dev/null > "${collections[count]}".txt
+   df $i > df_"${collections[count]}".txt
+   ls -laRp $i > ls_lRp_"${collections[count]}".txt
    if [ "$i" = "/MMRF" ] || [ "$i" = "/ngd-data" ] || [ "$i" = "/kjensen" ] ; then
-       echo "python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3 --lim 86000"
+       python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3 --lim 86000
    else
-       echo "python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3"
+       python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3
    fi
-   echo "node ../findDups.js "${collections[count]}""
+   node ../findDups.js "${collections[count]}"
    (( count++ ))
 done
 
