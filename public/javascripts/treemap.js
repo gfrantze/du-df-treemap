@@ -188,6 +188,8 @@ function clearTm() {
 
 function newImg() {
 
+    
+
     $(".spinner").show();
 
     var data = {
@@ -219,5 +221,10 @@ function newImg() {
 
 
 
+$( document ).ready(function() {
+    
+//http://stackoverflow.com/questions/9371426/jquery-wildcard-string
+    newImg();
 
-window.onload = newImg;
+});
+
