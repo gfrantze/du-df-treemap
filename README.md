@@ -43,25 +43,17 @@ OR:
 
 To use directories **other than my presets**, you can append map_images.sh or generate data for a single image:
 
-First, get disk usage statistics. -S flag is required!
+in map_images.sh, modify these lines:
 
-**du -S /some_image --exclude=/some_image/.snapshot 2>/dev/null > some_image.txt**
+images=( "/carpten" "/su2c" "/IVY" "/liang" "/ngd-data" "/trent" "/keats" "/MMRF" "/kjensen" "/AshionDrop")
+collections=( "carpten" "su2c" "IVY" "liang" "ngddata" "trent" "keats" "MMRF" "kjensen" "AshionDrop"  )
 
-Next, get empty space...
+Where images contains the image path, and collections contains the corresponding collection name for that path. 
 
-**df /some_image > df_some_image.txt**
+Finally (could take hours, depending on image size):
 
-Next, get file information...
+bash map_images.sh your_mongodb_address your_port your_desired_db
 
-**ls -laRp /some_image  > ls_lRp_some_image.txt**
-
-This next script will create a single nested JSON document in a format similar to flare.json. Parameters: your du text file output, your df text file output, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database.
-
-**python dlim_.py some_image.txt df_some_image.txt collection_name mongodb_ip mongodb_port mongodb_dbname**
-
-This final script will generate mongodb documents that represent ls -laRp data. Parameters: your ls text fileput, your desired mongodb collection name, your mongodb ip, your mongodb port, and the name of your database. **your collection name must contain the suffix _lRp for this step**
-
-**python parse_lRp.py ls_lRp_some_image.txt collection_name_lRp mongodb_ip mongodb_port mongodb_dbname**
 
 Modifying the view
 ------------------
@@ -100,3 +92,8 @@ v1.02
 ------
 
 - added default support for /trent, /keats and /MMRF
+
+v1.1
+------
+- duplicate detection support script
+- simplified data generation process

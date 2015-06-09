@@ -18,21 +18,38 @@ function getLS(myQuery) {
         timeout: 180000,
         success: function(res) {
 
-            console.log(res);
-
             if(res.length>0){
 
                 $("#g1").append(res[0].path)
                 $("#g1").append("<br>");
                 $("#g1").append("<br>");
 
+
                 for (var i = 0; i < res.length; i++) {
 
                     $("#g1").append(res[i].size + "&nbsp;&nbsp;&nbsp;&nbsp;" + res[i].filename + " <br> ");
 
-                }
+                    if(res[i].aalt ){
+                        
+                        console.log(res[i]);
+                        var aalt = res[i].aalt;
 
-            }
+                        for(item in aalt){
+
+                            if(aalt[item]!=res[0].path && res[i].size>10000000){
+                                var str_m = aalt[item];
+                                str_m = str_m.replace(":","");
+                             $("#g1").append( "&nbsp;&nbsp;&nbsp;&nbsp;" + "<b>alt location detected  </b> " + str_m + " <br> ");
+                            }
+
+                        }
+    
+            
+                    }
+
+
+             }  
+         }
 
             loading = false;
 
