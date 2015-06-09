@@ -11,7 +11,7 @@ do
    echo "df $i > df_"${collections[count]}".txt"
    echo "ls -laRp $i > ls_lRp_"${collections[count]}".txt"
    if [ "$i" = "/MMRF" ] || [ "$i" = "/ngd-data" ] || [ "$i" = "/kjensen" ] ; then
-       echo "python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3 --lim 89000"
+       echo "python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3 --lim 86000"
    else
        echo "python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3"
    fi
