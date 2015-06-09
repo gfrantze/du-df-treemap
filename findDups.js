@@ -1,5 +1,4 @@
-var db = require('./connection')._db2;
-var _ = require('lodash');
+var db = require('./connection').db;
 
 
 db.open(function(err,db1){
