@@ -4,7 +4,7 @@ var db = require('./connection').db;
 db.open(function(err,db1){
 
 
-    var test= db1.collection(process.argv[2]);
+    var test= db1.collection(process.argv[2]+"_lRp");
 
 
 	test.aggregate([
