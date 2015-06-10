@@ -1,4 +1,4 @@
-var db = require('./connection').db;
+var db = require('../connection').db;
 
 
 db.open(function(err,db1){
@@ -27,7 +27,7 @@ db.open(function(err,db1){
     					count: { $gt: 1 } 
   					 }}
 
-            ]).each(function(err, docs) {
+            ],{allowDiskUse:true}).each(function(err, docs) {
 
             	if(docs){
             		

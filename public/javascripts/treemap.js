@@ -36,7 +36,7 @@ function getLS(myQuery) {
 
                         for(item in aalt){
 
-                            if(aalt[item]!=res[0].path && res[i].size>10000000){
+                            if(aalt[item]!=res[0].path && res[i].size>1000000){
                                 var str_m = aalt[item];
                                 str_m = str_m.replace(":","");
                              $("#g1").append( "&nbsp;&nbsp;&nbsp;&nbsp;" + "<b>alt location detected  </b> " + str_m + " <br> ");
@@ -76,8 +76,8 @@ function curryInit(elem, _json, tt) {
 
 
 
-    var w = 1280 - 80,
-        h = 800 - 180,
+    var w = 1280 - 320, //1280 - 80
+        h = 720 , //800 - 180
         x = d3.scale.linear().range([0, w]),
         y = d3.scale.linear().range([0, h]),
         color = d3.scale.category20c(),
@@ -223,7 +223,26 @@ function newImg() {
 
 $( document ).ready(function() {
     
-//http://stackoverflow.com/questions/9371426/jquery-wildcard-string
+    var url = window.location.href;
+    var _url = url.split("/");
+
+    console.log(url);
+
+    $("#chn option").each(function()
+    {
+        console.log( $(this).val() )
+
+        if( $(this).val() == _url[ _url.length-1]) {
+
+            $("#chn").val(_url[_url.length-1] );
+
+
+        }
+
+
+    });
+
+
     newImg();
 
 });

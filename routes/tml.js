@@ -7,6 +7,14 @@ router.get('/', function(req, res, next) {
     res.render('tml');
 });
 
+router.get('/*',function(req,res,next){
+
+console.log(req.url);
+
+res.render('tml');
+
+});
+
 
 
 router.post('/ls', function(req, res, next) {
@@ -23,7 +31,7 @@ router.post('/ls', function(req, res, next) {
                 "sort": [
                     ['size', 'desc']
                 ]
-            }).limit(32).toArray(function(err, data) {
+            }).limit(128).toArray(function(err, data) {
                 console.log(data);
                 res.json(data);
                 db1.close();
