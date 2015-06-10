@@ -15,6 +15,7 @@ do
    else
        python dlim_.py "${collections[count]}".txt df_"${collections[count]}".txt "${collections[count]}" $1 $2 $3
    fi
+   python parse_lRp.py ls_lRp_"${collections[count]}".txt "${collections[count]}"_lRp $1 $2 $3
    node findDups.js "${collections[count]}"
    (( count++ ))
 done
