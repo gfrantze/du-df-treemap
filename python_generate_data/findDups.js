@@ -29,11 +29,12 @@ db.open(function(err,db1){
 
             ],{allowDiskUse:true}).each(function(err, docs) {
 
+
             	if(docs){
             		
             		var up = docs.paths;
               		if(up){
-						test.update({"size":docs._id},{$set:{"aalt":up} } );
+						test.update({"size":docs._id},{$set:{"aalt":up} },{multi:true} );
 					}
 					
 					

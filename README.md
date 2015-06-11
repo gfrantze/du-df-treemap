@@ -97,3 +97,6 @@ v1.1
 ------
 - duplicate detection support script
 - simplified data generation process
+
+1.12
+- bug fixes to above and interface improvements

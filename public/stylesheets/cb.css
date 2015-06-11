@@ -64,7 +64,7 @@ rect {
   line-height: 26.3999996185303px;
   height:120px;
   word-wrap: break-word;
-  padding: 12px 86px 0 108px;
+  padding: 12px 20px 0 20px;
 }
 
 pre {
@@ -103,7 +103,7 @@ line {
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 30%;
+  width: 60%;
   position: relative;
   transition: all 200ms ease-in-out;
 }
@@ -143,8 +143,7 @@ line {
     width: 75%;
   }
   .popup{
-    width: 75%;
+    width: 85%;
   }
 }
-
 
