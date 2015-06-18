@@ -97,10 +97,11 @@ function curryInit(elem, _json, tt) {
         root,
         node;
 
+
     var tm = d3.layout.treemap()
         .round(false)
         .size([w, h])
-        .sticky(true)
+        .padding(.2)
         .value(function(d) {
             return d.size;
         });
@@ -121,6 +122,7 @@ function curryInit(elem, _json, tt) {
     var nl_copy = "";
 
     node = root = _json[0];
+
 
     var nodes = tm.nodes(root)
         .filter(function(d) {
@@ -165,10 +167,12 @@ function curryInit(elem, _json, tt) {
 
     cell.append("svg:rect")
         .attr("width", function(d) {
-            return d.dx > 4 ? d.dx - .65 : d.dx;
+            return d.dx;
+           //return d.dx > 4 ? d.dx - .65 : d.dx;
         }) //careful balancing act for border size
         .attr("height", function(d) {
-            return d.dy > 4 ? d.dy - .65 : d.dy;
+           //return d.dy > 4 ? d.dy - .65 : d.dy;
+           return d.dy;
         }) // can either hack borders
         .style("fill", function(d) {
 

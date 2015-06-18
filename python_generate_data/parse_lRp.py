@@ -7,7 +7,7 @@ client = MongoClient(sys.argv[3], int(sys.argv[4])  )
 db = client[sys.argv[5]]
 
 collection = db[sys.argv[2]]
-collection.remove({})
+collection.remove()
 collection.ensure_index([("size",pymongo.DESCENDING)])
 collection.ensure_index([("path",pymongo.DESCENDING)])
 print(collection)
